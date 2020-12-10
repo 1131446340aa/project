@@ -1,0 +1,10 @@
+import Api from './utils/Api';
+
+type ApiNoop<T extends object> = (
+  urlOptions: object,
+  body?: object,
+  options?: object
+) => Promise<T>
+
+import {$interface} from './index1'
+export default  new Api($api).mapApi as $type
