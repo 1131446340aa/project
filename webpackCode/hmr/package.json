@@ -1,0 +1,27 @@
+{
+  "name": "hmr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack serve --config webpack.config.js",
+    "build": "webpack --config webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/socket.io": "^2.1.12",
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^4.5.1",
+    "socket.io": "^3.0.5",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1"
+  },
+  "dependencies": {
+    "memory-fs": "^0.5.0",
+    "mime": "^2.4.7"
+  }
+}

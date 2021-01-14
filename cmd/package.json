@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "chalk": "^4.1.0",
-    "inquirer": "^7.3.3"
+    "inquirer": "^7.3.3",
+    "superagent": "^6.1.0"
   }
 }

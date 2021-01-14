@@ -1,0 +1,11 @@
+{  //插件执行顺序优先presets 
+  "plugins": [
+    [
+      // 转es5 同时自动引入es6打包成es5的代码
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
+  ]
+}

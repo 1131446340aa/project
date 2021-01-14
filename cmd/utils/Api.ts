@@ -1,7 +1,7 @@
 
 
 import http from './http'
-
+import { message } from 'antd'
 interface ApiParam<T extends string> {
   method: 'get' | 'delete' | 'post' | 'put'
   name: T
@@ -12,6 +12,7 @@ interface ApiParam<T extends string> {
 type MapApi<T extends string> = {
   [K in T]: <M extends object>(urlOptions: object, body?: object, options?: object) => Promise<{ err: string, dat: M }>
 }
+
 class Api<T extends string>{
   mapApi: MapApi<T>
   constructor(private apiParam: ApiParam<T>[]) {
@@ -27,6 +28,7 @@ class Api<T extends string>{
         }
         else {
           const { err, dat } = await http[api.method]({ url: api.url, ...urlOptions }, body, options)
+
           return { err, dat: dat as T }
         }
       }

@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Inspector } from 'react-dev-inspector'
 
+const InspectorWrapper = process.env.NODE_ENV === 'development'
+  ? Inspector
+  : React.Fragment
+
+  
 ReactDOM.render(
-  <React.StrictMode>
+  <InspectorWrapper>
     <App />
-  </React.StrictMode>,
+
+  </InspectorWrapper>,
+ 
   document.getElementById('root')
 );
 

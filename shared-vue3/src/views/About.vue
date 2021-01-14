@@ -7,6 +7,7 @@ export default {
     const data = reactive({
       num: 21,
     })
+
     const methods = {
       addNum() {
         data.num++

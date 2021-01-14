@@ -106,15 +106,14 @@ class generateResponse {
       if (result.success) {
         const name = item.method + item.path.replace(/\/(.)/g, ($0, $1) => {
           return $1.toUpperCase()
-        }).replace(/[\:\{\}]/g, "")
+        }).replace(/[\:\{\}]/g, "") //将path转name，去掉特殊字符
         const fixedStr = result.data.resBody.replace(/\/\/(.*)/g, ($0, $1: string) => {
           if ($1.includes(`"`) || $1.includes(`'`)) {
             return '//' + $1
           } else {
             return ''
           }
-        }).replace(/\,\s*\n\s*([\]\}])/g, '\n$1') // 删除注释
-        // console.log(fixedStr && JSON.parse(fixedStr));
+        }).replace(/\,\s*\n\s*([\]\}])/g, '\n$1') // 删除注释 ,判断是否存在引号
         apiSet.push({
           name,
           url: item.path,
@@ -218,25 +217,27 @@ function firstUpperCase(props: string) {
   return props.replace(/^\S/, s => s.toUpperCase())
 }
 
-(function () {
-  if (!existsSync(cwd + '/interface.config.json')) {
-    inquirer.prompt(question).then(answer => {
-      writeFileSync(cwd + '/interface.config.json', JSON.stringify(answer, null, 2))
-      new generateResponse(answer)
-    })
-  } else {
-    console.log(chalk.red(''))
-    inquirer.prompt([{
-      name: 'exist',
-      type: 'input',
-      message: "配置文件已经存在,是否重写 y/others"
-    }]).then(res => {
-      if (res.exist === 'y') {
-        inquirer.prompt(question).then(answer => {
-          writeFileSync(cwd + '/interface.config.json', JSON.stringify(answer, null, 2))
-        })
-      }
-      new generateResponse(JSON.parse(String(readFileSync(cwd + '/interface.config.json'))))
-    })
-  }
-})()
+
+// (function () {
+//   if (!existsSync(cwd + '/interface.config.json')) {
+//     inquirer.prompt(question).then(answer => {
+//       writeFileSync(cwd + '/interface.config.json', JSON.stringify(answer, null, 2))
+//       new generateResponse(answer)
+//     })
+//   } else {
+//     console.log(chalk.red(''))
+//     inquirer.prompt([{
+//       name: 'exist',
+//       type: 'input',
+//       message: "配置文件已经存在,是否重写 y/others"
+//     }]).then(res => {
+//       if (res.exist === 'y') {
+//         inquirer.prompt(question).then(answer => {
+//           writeFileSync(cwd + '/interface.config.json', JSON.stringify(answer, null, 2))
+//         })
+//       }
+//       new generateResponse(JSON.parse(String(readFileSync(cwd + '/interface.config.json'))))
+//     })
+//   }
+// })()
+
