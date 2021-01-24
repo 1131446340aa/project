@@ -25,7 +25,7 @@ console.log(title);
       
           "./src/title.js":
           (function (module, exports, __webpack_require__) {
-            module.exports = {};
+            module.exports = 7;
           }),
        
   });

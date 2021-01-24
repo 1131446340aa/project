@@ -1,4 +1,4 @@
-const webpack = require('../webpack/lib/webpack')
+const webpack = require('../webpack')
 const webpackOptions = require('./webpack.config')
 
 const complier = webpack(webpackOptions)

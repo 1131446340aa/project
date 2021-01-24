@@ -66,7 +66,7 @@ function setRunner(runner: Set<Effect>) {
     if (effect.options.scheduler) {
       effect.options.scheduler()
     }
-    console.log(effect.options);
+
 
     effect();
   });

@@ -1,0 +1,12 @@
+{
+  "name": "expressCode",
+  "version": "1.0.0",
+  "description": "express 原理",
+  "main": "lib/express.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

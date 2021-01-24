@@ -6,7 +6,7 @@ const webpack = (options, callback) => {
   // 2 声明complier对象
   let complier = new Complier(options.context)
   complier.options = options
-
+ 
   new NodeEnvironmentPlugin().apply(complier) // 让complier可以写和读文件
 
   //3 挂载配置文件里提供的所有plugins
@@ -16,7 +16,8 @@ const webpack = (options, callback) => {
     }
   }
   new webpackOptionsApply().process(options, complier)
-  return compiler
+  
+  return complier
 }
 
 module.exports = webpack

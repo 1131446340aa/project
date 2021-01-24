@@ -1,5 +1,5 @@
-import { computed } from "./computed"
-import effect, { track, trick } from "./effect"
+
+import { track, trick } from "./effect"
 
 const reactive = <T extends object>(target: T): T => {
   if (target && typeof target === 'object') {
@@ -30,26 +30,8 @@ const reactive = <T extends object>(target: T): T => {
   return target
 }
 
-const data = reactive({ a: [1], b: 4 })
-// const data2 = reactive({ a: [] })
-// const comp = computed(() => {
-//   console.log('computed');
-//   return data.b
-// })
-effect(() => {
-  console.log(data.a.length);
-})
-// comp.value
-// data.b = 2
-// comp.value
-// data.b = 2
 
-data.a.push(3)
-
-
-// data.b = 8
-
-// console.log(comp.value);
+export default reactive
 
 
 
