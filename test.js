@@ -1,13 +1,10 @@
-let x = [Promise.resolve(3),Promise.reject(2)]
+ function add(...param){
+   if(add.value===undefined){
+     add.value = 0
+   }
+   add.sumOf = ()=>add.value
+   return param.reduce((all,item)=>all+item,add.value)
+ }
 
-Promise.race(x).catch(res=>{
-  console.log(res);
-}).then(res=>{
-  console.log(res);
-})
-
-Promise.all(x).catch(res=>{
-  console.log(res);
-}).then(res=>{
-  console.log(res);
-})
+console.log( add(2)(3,4).sumOf())
+ 

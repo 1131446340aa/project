@@ -24,9 +24,9 @@ export interface Creator {
   experts: object
   djStatus: number
   vipType: number
-  remarkName: object
+  remarkName: null
   authenticationTypes: number
-  avatarDetail: object
+  avatarDetail: null
   backgroundImgIdStr: string
   avatarImgIdStr: string
   anchor: boolean

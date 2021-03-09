@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import Store from './store/index'
-import { onMounted, reactive, toRef, toRefs, watch } from 'vue'
+import { onMounted, toRefs } from 'vue'
 import musicPlay from './common/musicPlay'
 import store from './store/index'
 export default {

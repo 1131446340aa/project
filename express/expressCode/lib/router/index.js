@@ -14,7 +14,7 @@ class Router{
     let layer = new Layer(path,handle)
     this.stack.push(layer)
   }
-  route(path){
+  route(path){ 
     let route = new Route()
     let layer = new Layer(path,route.dispatch)
     layer.route = route
@@ -50,12 +50,14 @@ class Router{
 
   }
 }
+
+
 methods.forEach(method=>{
   Router.prototype[method] = function(path,...callbacks){
     let route = this.route(path)
     
     route[method](...callbacks)
-   }
+  }
 })
 
 

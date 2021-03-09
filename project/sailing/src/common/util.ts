@@ -115,3 +115,4 @@ export function swapElements(a: HTMLElement, b: HTMLElement) {
 export function isNumber(index: string) {
   return (/[0-9]+/.test(index))
 }
+
